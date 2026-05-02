@@ -16,6 +16,7 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
+        onSuccess(); // C'est ici qu'on ajoute l'appel à la fonction de succès !
       } catch (err) {
         setSending(false);
         onError(err);
@@ -64,3 +65,4 @@ Form.defaultProps = {
 }
 
 export default Form;
+
