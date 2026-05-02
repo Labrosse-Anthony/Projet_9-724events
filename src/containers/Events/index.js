@@ -13,19 +13,14 @@ const EventList = () => {
   const { data, error } = useData();
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  const filteredEvents = (
-    (!type
-      ? data?.events
-      : data?.events) || []
-  ).filter((event, index) => {
-    if (
-      (currentPage - 1) * PER_PAGE <= index &&
-      PER_PAGE * currentPage > index
-    ) {
-      return true;
-    }
-    return false;
-  });
+  const eventsByType = !type
+      ? data?.events || []
+      : data?.events.filter((event) => event.type === type);
+  const filteredEvents = eventsByType.filter(
+    (event, index) =>
+    index >= (currentPage - 1) * PER_PAGE &&
+           index < currentPage * PER_PAGE
+);
   const changeType = (evtType) => {
     setCurrentPage(1);
     setType(evtType);
@@ -62,7 +57,11 @@ const EventList = () => {
           <div className="Pagination">
             {[...Array(pageNumber || 0)].map((_, n) => (
               // eslint-disable-next-line react/no-array-index-key
-              <a key={n} href="#events" onClick={() => setCurrentPage(n + 1)}>
+              <a key={n}
+                href="#events"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrentPage(n + 1)}}>
                 {n + 1}
               </a>
             ))}
