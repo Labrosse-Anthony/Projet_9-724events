@@ -9,8 +9,7 @@
 * L'objectif du site est de présenter les services et réalisations de l'agence tout en garantissant :
 
     * une correction complète des bugs fonctionnels (Slider, formulaires, filtres),
-    * une exécution conforme des tests unitaires et d'intégration,
-    * un déploiement fonctionnel sur GitHub Pages.
+    * une exécution conforme des tests unitaires et d'intégration .
 
 ## Fonctionnalités
 
@@ -25,7 +24,5 @@
 ## Outils et langages pour la réalisation du projet
 
 * Le projet a été réalisé avec **HTML5, CSS3 (Sass), JavaScript et React**.
-
-* La gestion des données globales est assurée par l'API Context de React.
 
 * Les tests unitaires et d'intégration ont été effectués via **Jest** et **React Testing Library**.
