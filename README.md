@@ -21,6 +21,14 @@
 
 * **Contact** : Formulaire permettant aux visiteurs de solliciter l'agence avec affichage d'un message de confirmation après envoi.
 
+## Installation
+
+* **Installation** : yarn install 
+
+* **Lancement apllication** : yarn start
+
+* **test** : yarn test
+
 ## Outils et langages pour la réalisation du projet
 
 * Le projet a été réalisé avec **HTML5, CSS3 (Sass), JavaScript et React**.
